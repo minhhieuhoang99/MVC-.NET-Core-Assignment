@@ -1,0 +1,15 @@
+﻿@model MVC_2.Models.PersonModel
+
+@{
+    ViewData["Title"] = $"{Model.firstName}{Model.lastName}";
+}
+
+<partial name="_Show" model="Model" />
+
+<hr />
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    <a asp-action="Delete" asp-route-id="@Model.id" class="btn btn-danger">Delete</a>
+    <a asp-action="Edit" asp-route-id="@Model.id" class="btn btn-warning">Edit</a>
+</div>
