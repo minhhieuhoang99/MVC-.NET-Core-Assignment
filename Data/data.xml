@@ -13,18 +13,6 @@
     <email>hieu@gmai.com</email>
   </PersonModel>
   <PersonModel>
-    <id>2</id>
-    <firstName>hieu2</firstName>
-    <lastName>hoang2</lastName>
-    <dateOfBirth>2000-08-09T00:00:00</dateOfBirth>
-    <gender>nu</gender>
-    <phoneNumber>123456789</phoneNumber>
-    <birthPlace>HN</birthPlace>
-    <age>10</age>
-    <isGraduated>false</isGraduated>
-    <email>hieu@gmai.com</email>
-  </PersonModel>
-  <PersonModel>
     <id>3</id>
     <firstName>hieu3</firstName>
     <lastName>hoang3</lastName>
@@ -32,20 +20,8 @@
     <gender>nam</gender>
     <phoneNumber>123456789</phoneNumber>
     <birthPlace>QN</birthPlace>
-    <age>10</age>
-    <isGraduated>true</isGraduated>
-    <email>hieu@gmai.com</email>
-  </PersonModel>
-  <PersonModel>
-    <id>4</id>
-    <firstName>hieu4</firstName>
-    <lastName>hoang4</lastName>
-    <dateOfBirth>2000-08-09T00:00:00</dateOfBirth>
-    <gender>nu</gender>
-    <phoneNumber>123456789</phoneNumber>
-    <birthPlace>TB</birthPlace>
-    <age>10</age>
-    <isGraduated>true</isGraduated>
+    <age>12</age>
+    <isGraduated>false</isGraduated>
     <email>hieu@gmai.com</email>
   </PersonModel>
   <PersonModel>

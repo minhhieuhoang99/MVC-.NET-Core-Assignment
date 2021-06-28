@@ -1,4 +1,6 @@
-﻿@model IEnumerable<MVC_2.Models.PersonModel>
+﻿@using Microsoft.AspNetCore.Http    
+@inject IHttpContextAccessor httpContextAccessor   
+@model IEnumerable<MVC_2.Models.PersonModel>
 
 @{
     ViewData["Title"] = $"Person list ({Model.Count()} items)";
@@ -33,10 +35,16 @@
                 <td>@item.phoneNumber</td>
                 <td>
                     <a asp-action="Details" asp-route-id="@item.id" class="btn btn-info">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Delete</a>
+                    @* <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Delete</a> *@
                     <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning">Edit</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+@if (TempData["personDelete"] != null)
+{
+ <p class="alert alert-success" id="successMessage">@TempData["personDelete"] @ViewData["personName"] </p>
+ <p>@httpContextAccessor.HttpContext.Session.GetString("person")   </p>
+}

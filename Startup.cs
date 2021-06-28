@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http ;
 using MVC_2.Models;
 
 namespace MVC_2
@@ -26,6 +27,10 @@ namespace MVC_2
         {
             services.AddControllersWithViews();
             services.AddSingleton<Service>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();  
+            services.AddDistributedMemoryCache();//To Store session in Memory, This is default implementation of IDistributedCache    
+            services.AddSession();  
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +52,8 @@ namespace MVC_2
             app.UseRouting();
 
             app.UseAuthorization(); 
-
+            app.UseCookiePolicy();      
+            app.UseSession();      
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
