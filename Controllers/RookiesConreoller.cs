@@ -2,15 +2,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using MVC_2.Models;
+using MVC_2.Services;
 
 namespace MVC_2.Controllers
 {
     public class RookiesController : Controller
     {
 
-        private readonly Service _service;
-        public RookiesController(Service service)
-        {
+        private readonly IService _service;
+        public RookiesController(IService service){
             _service = service;
         }
         public IActionResult Index()

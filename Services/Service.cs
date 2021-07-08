@@ -4,9 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 using Microsoft.AspNetCore.Http;
-namespace MVC_2.Models
+using MVC_2.Services;
+using MVC_2.Models;
+namespace MVC_2.Services
 {
-    public class Service
+    public class Service : IService
     {
         private readonly string _dataFile = @"Data\data.xml";
         private readonly XmlSerializer _serializer = new XmlSerializer(typeof(HashSet<PersonModel>));

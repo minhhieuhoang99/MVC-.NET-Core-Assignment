@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http ;
 using MVC_2.Models;
+using MVC_2.Services;
 
 namespace MVC_2
 {
@@ -26,13 +27,12 @@ namespace MVC_2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton<Service>();
+            services.AddSingleton< IService , Service>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();  
             services.AddDistributedMemoryCache();//To Store session in Memory, This is default implementation of IDistributedCache    
             services.AddSession();  
 
         }
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
